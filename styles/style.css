@@ -10,12 +10,17 @@ html {
 
 .page {
   inline-size: 1200px;
-  block-size: 100%;
+  /* block-size: 100%; этот параметр был задан в шаблоне если его убрать то все встает на свои места*/
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex; /*Задайте флекс для верхнего контейнера .page.*/
+  justify-content: center;
+  align-content: flex-end;
+  flex-direction: row;
+  padding: 127px 30px;
 }
 
 h1,
@@ -47,5 +52,200 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 711px 399px;
+  grid-template-rows: auto;
+  gap: 30px;
+  width: 1140px;
+}
+.result {
+  align-self: end;
+}
+
+.result__video-container {
+  /*контейнер видео*/
+  position: relative;
+  height: 386px;
+  width: 711px;
+  
+  margin-bottom: 16px;
+}
+
+.result__video {
+  /*тэг видео*/
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content__details {
+  align-self: end;
+}
+
+.search-form {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  border:none;
+}
+
+.search-form__fieldset-title {
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+/*ВОТ ЭТО НЕ СДЕЛАЛА: 
+Расставьте элементы внутри .search-form__label в линию. 
+Примените свойство display: flex;. 
+Также вам пригодится правило width: fit-content;.
+оно у  меня и так все в линию было добавила */
+
+.search-form__label {
+  display: flex;
+ /* width: fit-content;*/
+  flex-direction: row;
+}
+
+.search-form__textfield {
+  font-family: Fira Sans Condensed ;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
+  border-width: 1px;
+  border-style: solid none;
+  border-color: #FFFFFF;
+  color: #FFFFFFB2;
+  background: none;
+  min-width: 225px; 
+  width: fit-content;
+
+}
+
+
+.search-form__checkbox-list {
+  display:flex;
+  gap: 15px;
+  
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+.title {
+  font-family: Oswald;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70.5px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 26px;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list-container {
+  
+  height: 298px;
+  width: 390px;
+  overflow-y: auto;
+}
+
+.content__list {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__list-item {
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: flex-start;
+  
+  height: 103px;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  width: 196px;
+}
+
+.content__video-card-description {
+ 
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  letter-spacing: 0.031em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp:3;
+  overflow: hidden;
+
+ 
+ 
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
