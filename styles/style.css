@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline:var(--outline);
+}
+
 html {
   block-size: 100%;
 }
@@ -20,7 +24,7 @@ html {
   justify-content: center;
   align-content: flex-end;
   flex-direction: row;
-  padding: 127px 30px;
+  padding: 125px 30px;
 }
 
 h1,
@@ -71,8 +75,7 @@ ol {
   position: relative;
   height: 386px;
   width: 711px;
-  
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .result__video {
@@ -85,6 +88,7 @@ ol {
 
 .content__details {
   align-self: end;
+  margin-top: 10px;
 }
 
 .search-form {
@@ -94,17 +98,18 @@ ol {
 }
 
 .search-form__fieldset {
-  border:none;
+  border: none;
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+  margin-bottom: 3px;
 }
 
 /*ВОТ ЭТО НЕ СДЕЛАЛА: 
@@ -114,31 +119,93 @@ ol {
 оно у  меня и так все в линию было добавила */
 
 .search-form__label {
+  position: relative;
   display: flex;
- /* width: fit-content;*/
+  /* width: fit-content;*/
+  /*gap:15px; */
+  /* align-items: center; сказал наставник но ни на что не виляет пока*/
   flex-direction: row;
+  /*align-items:start;*/
+
+  margin-bottom: 3px;
 }
 
 .search-form__textfield {
-  font-family: Fira Sans Condensed ;
+  /*тут подгружается шрифт не похожий на тот что в шаблоне*/
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   text-align: left;
   border-width: 1px;
   border-style: solid none;
-  border-color: #FFFFFF;
-  color: #FFFFFFB2;
+  border-color: #ffffff;
+  color: #ffffffb2;
   background: none;
-  min-width: 225px; 
+  min-width: 225px;
   width: fit-content;
-
+  appearance: none;
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+}
 
 .search-form__checkbox-list {
-  display:flex;
-  gap: 15px;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  justify-content: space-between; /*проверить нужно ли вообще после того как настою чекбоксы*/
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  margin-right: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  background-color: #fff;
+  align-self: center;
+  width: 15px;
+  height: 15px;
+}
+
+.search-form__label:hover:has(input[type="checkbox"]) {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button {
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  text-align: center;
+  background: none;
+  box-shadow: none;
+  border: 1px solid #fff;
+  color: #fff;
+  align-self:stretch;
+ 
+}
+
+.button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
   
 }
 
@@ -146,17 +213,24 @@ ol {
   width: 194px;
   height: 34px;
   align-self: flex-end;
+  margin-bottom: 3px;
+}
+
+.more-button {
+  width: 100% ;
+  height: 34px;
+  
 }
 
 .title {
-  font-family: Oswald;
+  font-family: "Oswald";
   font-size: 75px;
   font-weight: 700;
   line-height: 70.5px;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
   text-transform: uppercase;
 }
 
@@ -165,37 +239,42 @@ ol {
 }
 
 .content__list-container {
-  
   height: 298px;
   width: 390px;
   overflow-y: auto;
 }
 
+.content__list-item:has(a:focus-visible) {
+  outline: 1px solid #fff;
+   
+}
+
 .content__list {
- 
   display: flex;
   flex-direction: column;
+ /*flex-wrap:nowrap;*/
   gap: 30px;
-  
+  padding:3px 3px 30px 3px;
 }
 
 .content__card-link {
   text-decoration: none;
   color: #fff;
+  
 }
 
-.content__list-item {
-}
+
 
 .content__video-card {
   display: flex;
   justify-content: flex-start;
-  
   height: 103px;
+ 
 }
 
+
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: "Oswald";
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
@@ -210,7 +289,6 @@ ol {
 }
 
 .content__video-card-description {
- 
   font-family: Fira Sans Condensed;
   font-size: 18px;
   font-weight: 400;
@@ -222,11 +300,8 @@ ol {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  line-clamp:3;
+  line-clamp: 3;
   overflow: hidden;
-
- 
- 
 }
 
 .content__video-card-description-container {
