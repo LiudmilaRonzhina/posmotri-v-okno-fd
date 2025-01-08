@@ -13,13 +13,13 @@ html {
 }
 
 .page {
-  display: flex; 
+  display: flex;
   justify-content: center;
   inline-size: 1200px;
   height: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   align-items: center;
@@ -125,7 +125,7 @@ ol {
 
 .search-form__textfield {
   /*тут подгружается шрифт не похожий на тот что в шаблоне*/
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -326,7 +326,7 @@ ol {
 }
 
 .visually-hidden {
-  position: absolute;
+  /* position: absolute;*/
   inline-size: 1px;
   block-size: 1px;
   overflow: hidden;
