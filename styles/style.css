@@ -15,14 +15,14 @@ html {
 .page {
   display: flex;
   justify-content: center;
-  inline-size: 1200px;
+  align-items: center;
   height: 100%;
   margin: auto;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  align-items: center;
+  inline-size: 1200px;
 }
 
 h1,
@@ -71,15 +71,15 @@ ol {
 .result__video-container {
   /*контейнер видео*/
   position: relative;
-  height: 386px;
   width: 711px;
+  height: 386px;
   margin-bottom: 17px;
 }
 
 .result__video {
+  width: 100%;
   /*тэг видео*/
   height: 100%;
-  width: 100%;
   object-fit: cover;
 }
 
@@ -99,21 +99,15 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-size: 18px;
+  margin-bottom: 3px;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
+  font-size: 18px;
   line-height: 21.6px;
   text-align: left;
-  text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  margin-bottom: 3px;
+  text-underline-position: from-font;
 }
-
-/*ВОТ ЭТО НЕ СДЕЛАЛА: 
-Расставьте элементы внутри .search-form__label в линию. 
-Примените свойство display: flex;. 
-Также вам пригодится правило width: fit-content;.
-оно у  меня и так все в линию было добавила */
 
 .search-form__label {
   position: relative;
@@ -123,19 +117,18 @@ ol {
 }
 
 .search-form__textfield {
-  /*тут подгружается шрифт не похожий на тот что в шаблоне*/
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.6px;
-  text-align: left;
+  width: fit-content;
+  min-width: 225px;
   border-width: 1px;
   border-style: solid none;
   border-color: #ffffff;
   color: #ffffffb2;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  text-align: left;
   background: none;
-  min-width: 225px;
-  width: fit-content;
   appearance: none;
 }
 
@@ -161,44 +154,44 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 13px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /*проверить нужно ли вообще после того как настою чекбоксы*/
+  gap: 13px;
 }
 
 .search-form__pseudo-checkbox {
-  width: 19px;
-  height: 19px;
-  border: 1px solid #fff;
-  margin-right: 7px;
   display: flex;
   justify-content: center;
+  width: 19px;
+  height: 19px;
+  margin-right: 7px;
+  border: 1px solid #fff;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  content: "";
-  background-color: #fff;
+  content: '';
   align-self: center;
   width: 15px;
   height: 15px;
+  background-color: #fff;
 }
 
-.search-form__label:hover:has(input[type="checkbox"]) {
+.search-form__label:hover:has(input[type='checkbox']) {
   text-decoration: underline;
   cursor: pointer;
 }
 
 .button {
-  font-family: "Fira Sans Condensed";
-  font-size: 18px;
+  align-self: stretch;
+  border: 1px solid #fff;
+  box-shadow: none;
+  color: #fff;
+  font-family: 'Fira Sans Condensed';
   font-weight: 700;
+  font-size: 18px;
   line-height: 21.6px;
   text-align: center;
   background: none;
-  box-shadow: none;
-  border: 1px solid #fff;
-  color: #fff;
-  align-self: stretch;
 }
 
 .button:hover {
@@ -207,14 +200,14 @@ ol {
 }
 
 .button:active {
-  background-color: #545050;
   text-decoration: none;
+  background-color: #545050;
 }
 
 .search-form__submit-button {
+  align-self: flex-end;
   width: 194px;
   height: 34px;
-  align-self: flex-end;
   margin-bottom: 3px;
 }
 
@@ -224,16 +217,15 @@ ol {
 }
 
 .title {
-  font-family: "Oswald";
-  font-size: 75px;
+  margin-bottom: 22px;
+  font-family: 'Oswald';
   font-weight: 700;
+  font-size: 75px;
   line-height: 70.5px;
   text-align: left;
-  text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  margin-bottom: 22px;
+  text-underline-position: from-font;
   text-transform: uppercase;
-  /*margin-top:166px;*/
 }
 
 .content__accent {
@@ -242,8 +234,8 @@ ol {
 
 .content__list-container {
   position: relative;
-  height: 298px;
   width: 390px;
+  height: 298px;
   overflow-y: auto;
 }
 
@@ -271,8 +263,8 @@ ol {
 }
 
 .content__card-link {
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
 }
 
 .content__video-card {
@@ -282,35 +274,35 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 30px;
-  padding-bottom: 1px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
   width: 196px;
+  padding-bottom: 1px;
+  overflow: hidden;
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 25.2px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  letter-spacing: 0.031em;
   display: -webkit-box;
+  overflow: hidden;
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25.2px;
+  letter-spacing: 0.031em;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
-  overflow: hidden;
+  /* line-clamp: 3;*/
 }
 
 .content__video-card-description-container {
@@ -325,10 +317,11 @@ ol {
 }
 
 .visually-hidden {
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  /* position: absolute;*/
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
