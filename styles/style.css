@@ -119,10 +119,11 @@ ol {
 .search-form__textfield {
   width: fit-content;
   min-width: 225px;
-  border-width: 1px;
-  border-style: solid none;
-  border-color: #ffffff;
-  color: #ffffffb2;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  color: #ffffff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -137,9 +138,8 @@ ol {
 }
 
 .search-form__textfield:active {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #fff;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -259,7 +259,7 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 3px 3px 30px 3px;
+  padding: 3px 3px 0 3px;
 }
 
 .content__card-link {
@@ -319,7 +319,7 @@ ol {
 .visually-hidden {
   overflow: hidden;
   clip: rect(0 0 0 0);
-  /* position: absolute;*/
+  position: absolute;
   inline-size: 1px;
   block-size: 1px;
   clip-path: inset(50%);
