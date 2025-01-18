@@ -80,8 +80,8 @@ ol {
   width: 100%;
   /*тэг видео*/
   height: 100%;
-  object-position: center;
   object-fit: cover;
+  object-position: center;
 }
 
 .content__details {
@@ -177,9 +177,8 @@ ol {
 }
 
 .search-form__pseudo-checkbox::after + .search-form__label-text {
-  background-color: #FFF;
+  background-color: #fff;
 }
-
 
 .search-form__label:hover:has(input[type='checkbox']) {
   text-decoration: underline;
@@ -188,6 +187,7 @@ ol {
 
 .button {
   align-self: stretch;
+  min-height: 34px;
   border: 1px solid #fff;
   box-shadow: none;
   color: #fff;
@@ -197,7 +197,6 @@ ol {
   line-height: 21.6px;
   text-align: center;
   background: none;
-  min-height: 34px;
 }
 
 .button:hover {
@@ -213,7 +212,7 @@ ol {
 .search-form__submit-button {
   align-self: flex-end;
   width: 194px;
- }
+}
 
 .more-button {
   width: 100%;
