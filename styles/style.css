@@ -120,9 +120,9 @@ ol {
   width: fit-content;
   min-width: 225px;
   border-top: 1px solid #fff;
+  border-right: 1px solid transparent;
   border-bottom: 1px solid #fff;
   border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
   color: #ffffff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
@@ -138,8 +138,8 @@ ol {
 }
 
 .search-form__textfield:active {
-  border-left: 1px solid transparent;
   border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -176,7 +176,7 @@ ol {
   background-color: #fff;
 }
 
-.search-form__pseudo-checkbox::after + .search-form__label-text   {
+.search-form__pseudo-checkbox::after + .search-form__label-text {
   background-color: #FFF;
 }
 
@@ -321,9 +321,9 @@ ol {
 }
 
 .visually-hidden {
+  position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  position: absolute;
   inline-size: 1px;
   block-size: 1px;
   clip-path: inset(50%);
