@@ -99,7 +99,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  margin-bottom: 3px;
+  margin-bottom: 6px;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -113,7 +113,7 @@ ol {
   position: relative;
   display: flex;
   flex-direction: row;
-  margin-bottom: 3px;
+  margin-bottom: 1px;
 }
 
 .search-form__textfield {
@@ -176,6 +176,11 @@ ol {
   background-color: #fff;
 }
 
+.search-form__pseudo-checkbox::after + .search-form__label-text   {
+  background-color: #FFF;
+}
+
+
 .search-form__label:hover:has(input[type='checkbox']) {
   text-decoration: underline;
   cursor: pointer;
@@ -208,8 +213,7 @@ ol {
   align-self: flex-end;
   width: 194px;
   height: 34px;
-  margin-bottom: 3px;
-}
+ }
 
 .more-button {
   width: 100%;
@@ -234,7 +238,7 @@ ol {
 
 .content__list-container {
   position: relative;
-  width: 390px;
+  width: 399px;
   height: 298px;
   overflow-y: auto;
 }
@@ -296,7 +300,7 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 25.2px;
-  letter-spacing: 0.031em;
+  letter-spacing: 0.018em;
   text-align: left;
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
