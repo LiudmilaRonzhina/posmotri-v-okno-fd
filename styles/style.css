@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-*:focus-visible {
-  outline: var(--outline);
-}
-
 html {
   block-size: 100%;
 }
@@ -77,11 +73,13 @@ ol {
 }
 
 .result__video {
+  display: block;
   width: 100%;
   /*тэг видео*/
   height: 100%;
   object-fit: cover;
   object-position: center;
+  outline: none;
 }
 
 .content__details {
@@ -215,7 +213,10 @@ ol {
 }
 
 .more-button {
+  display: block;
   width: 100%;
+  margin-top: 30px;
+  outline: none;
 }
 
 .title {
@@ -241,10 +242,6 @@ ol {
   overflow-y: auto;
 }
 
-.content__list-item:has(a:focus-visible) {
-  outline: 1px solid #fff;
-}
-
 .content__list-item:has(a:active) {
   background-color: #545050;
 }
@@ -265,8 +262,15 @@ ol {
 }
 
 .content__card-link {
+  display: block;
+  outline: none;
   color: #fff;
   text-decoration: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .content__video-card {
@@ -312,6 +316,7 @@ ol {
 }
 
 .content__video-card-thumbnail {
+  flex-shrink: 0;
   width: 194px;
   height: 103px;
   object-fit: cover;
